@@ -1,56 +1,46 @@
 module.exports = class MergeSort {
+    constructor() {
+        this.vetor = [];
 
-    mergeSort(vetor, inicio, fim) {
+	}
+     mergeSort(vetor, inicio, fim) {
     if ((fim - inicio) > 1) {
         var meio = Math.round((fim + inicio) / 2);
+        
+        this.mergeSort(vetor, inicio, meio);
 
-        mergeSort(vetor, inicio, meio);
+        this.mergeSort(vetor, meio, fim);
 
-        mergeSort(vetor, meio, fim);
+        this.merge(vetor, inicio, meio, fim);
+         }
+      
 
-        merge(vetor, inicio, meio, fim);
     }
 
-    }
+    merge(vetor, incio, meio, final) {
+        var x = 0;
+        var y = incio;
+        var z = meio;
+        var vetAux = [];
+        while (y < meio && z < final) {
+            if (vetor[y] < vetor[z])
+                vetAux[x] = vetor[y++];
+            else
+                vetAux[x] = vetor[z++];
 
-     merge(vetor, inicio, meio, final) {
-         var atualiza = 0, ;
-         var atualizacao2 = inicio;
-         var atualizacao3 = meio;
-    var novoVet = [];
-    while (atualizacao2 < meio && atualizacao3 < final) {
-
-        if (vetor[atualizacao2] < vetor[atualizacao3]) {
-            novoVet[atualiza] = vetor[atualizacao2];
-            atualizacao2++;
+            x++;
         }
-        else {
-            novoVet[atualiza] = vetor[atualizacao3];
-            atualizacao3++;
+        while (y < meio) {
+            vetAux[x++] = vetor[y++];
         }
-        atualiza++;
+        while (z < final) {
+            vetAux[x++] = vetor[z++];
+        }
+        for (var i = 0; i < x; i++) {
+            vetor[incio + i] = vetAux[i];
+
+        }
     }
-
-    while (atualizacao2 < meio) {
-        novoVet[atualiza] = vetor[atualizacao2];
-        atualiza++;
-        atualizacao2++;
-    }
-    while (atualizacao3 < final) {
-        novoVet[atualiza] = vetor[atualizacao3];
-        atualizacao3++;
-        atualiza++;
-    }
-    return novoVet;
-
-}
-
-
-
-
-
-
-
 
 
 
