@@ -1,0 +1,9 @@
+{
+  "name": "jogo-dupla-proxima",
+  "version": "0.0.0",
+  "description": "JogoDuplaProxima",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
