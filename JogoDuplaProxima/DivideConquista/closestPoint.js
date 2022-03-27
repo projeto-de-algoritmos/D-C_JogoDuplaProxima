@@ -1,16 +1,27 @@
+const MergeSort = require('./mergeSort.js');
 module.exports = class ClosestPoints {
 
     constructor() { }
 
     divideAndConquer(points) {
         this.points = points;
+        var ordena = new MergeSort()
 
-        points.sort((a, b) => a.x - b.x);
-        this.pointsOrderedByX = points.slice();
+        let xArray = []
+        let xOrdering = []
+        for (let i = 0; i < this.points.length; i++) {
+            xArray.push(this.points[i].x)
+        }
+        ordena.mergeSort(xArray, 0, xArray.length);
+        for (let i = 0; i < xArray.length; i++) {
+            for (let j = 0; j < this.points.length; j++) {
+                if (xArray[i] == this.points[j].x) {
+                    xOrdering.push(this.points[j])
+                }
+            }
+        }
 
-        points.sort((a, b) => a.y - b.y);
-        this.pointsOrderedByY = points.slice();
-
+        this.pointsOrderedByX = xOrdering;
         let result = this.closestPair(this.pointsOrderedByX);
         return { distance: result.distance, pointA: result.pointA, pointB: result.pointB };
     }
