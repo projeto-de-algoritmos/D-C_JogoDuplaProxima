@@ -14,7 +14,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Jogo Dupla mais Pr�xima</title>
+    <title>Jogo Dupla mais Próxima</title>
 
 </head>
 <body>
@@ -23,8 +23,8 @@
         <nav class="navbar navbar-light bg-danger">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="#">
-                    <img src="img/duplaa.png" alt="" width="30" height="24" class="d-inline-block align-text-top rounded-circle">
-                    Dupla Mais Proxima
+                    <img src="img/tom.jpg" alt="" width="30" height="30" class="d-inline-block align-text-top rounded-circle">
+                    Dupla Mais Próxima
                 </a>
             </div>
         </nav>
@@ -33,20 +33,20 @@
     <main>
         <section class="container section-principal">
             <div>
-                <h1 class="titulo">Bem-Vindo ao desafio de Tom e Jerry da dupla mais proxima</h1>
+                <h1 class="titulo">Bem-Vindo ao desafio de Tom e Jerry da dupla mais próxima</h1>
             </div>
             <div>
-                
+
             </div>
 
-            <form action="/" method="POST">
+            <form action="/localiza" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Localizacao no plano x e y">
+                    <input class="form-control" name="pontos" type="text" placeholder="Localização dos jogadores no plano x e y no formato json, exemplo = [{ x: 1, y: 2 }, { x: 54, y: 12 }, { x: 45, y: 45 }];">
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-danger  btn-sm selects .active" id="botao">Inserir</button>
-                    </div>
+                    <button type="submit" class="btn btn-danger botao  btn-sm selects .active" id="botao">Inserir</button>
+                </div>
             </form>
         </section>
     </main>
@@ -54,7 +54,7 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
- 
+
 
 
 </body>
