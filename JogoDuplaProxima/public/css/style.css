@@ -2,3 +2,6 @@ body {
     background-image: url(../img/TomJerry.png);
     background-repeat: no-repeat;
 }
+.botao {
+    margin-top: 1%;
+}
